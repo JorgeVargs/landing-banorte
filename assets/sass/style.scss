@@ -1,28 +1,118 @@
 @import "mixins";
 
 @include fonts('gotham-book','../assets/fonts/GothamBook');
+@include fonts('gotham-bold','../assets/fonts/GothamBold');
 
 :root{
     --primary:#ea0028;
     --gray:#f1f1f1;
+    --text-gray:#5b6670;
+    --bg-gray:#e6e7e9;
 }
 
 body{
     font-family: gotham-book;
-}
-
-.bgred{
-    background-color: var(--primary);
+    margin: 0px;
+    padding: 0px;
 }
 
 nav{
     background-color: var(--gray);
+    padding: 12px 90px;
     ul{
         list-style-type: none;
-        padding: left;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
         .nav-item{
+            margin: 0px 12px;
             .nav-link{
-                
+                text-decoration: none;
+                color: var(--text-gray);
+
+                &:hover{
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}
+
+section{
+    &.header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .col{
+            background-color: var(--primary);
+            width: 50%;
+            height: 350px;
+            img{
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+            }
+        }
+
+        .bgred{
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h1{
+                color: white;
+            }
+        }
+    }
+
+    &.pasos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: -60px;
+        .card{
+            width: 300px;
+            padding: 50px 25px;
+            background-color: var(--gray);
+            position: relative;
+
+            span{
+                position: absolute;
+                top: 30px;
+                left: 40px;
+                width: 35px;
+                height: 35px;
+                border: 2px solid var(--primary);
+                border-radius: 50%;
+                display: block;
+                color: var(--primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &:last-of-type{
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            &:nth-last-of-type(2){
+                background-color: var(--bg-gray);
+            }
+
+            &:first-of-type{
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            img{
+
+            }
+
+            p{
+                text-align: center;
+                color: var(--text-gray);
+                font-family: gotham-bold;
             }
         }
     }
