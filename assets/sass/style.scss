@@ -1,0 +1,29 @@
+@import "mixins";
+
+@include fonts('gotham-book','../assets/fonts/GothamBook');
+
+:root{
+    --primary:#ea0028;
+    --gray:#f1f1f1;
+}
+
+body{
+    font-family: gotham-book;
+}
+
+.bgred{
+    background-color: var(--primary);
+}
+
+nav{
+    background-color: var(--gray);
+    ul{
+        list-style-type: none;
+        padding: left;
+        .nav-item{
+            .nav-link{
+                
+            }
+        }
+    }
+}
