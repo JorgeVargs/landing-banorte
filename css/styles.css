@@ -482,6 +482,50 @@ section.ranking .posicion p {
   color: white;
   padding: 5px 20px;
 }
+section.preguntas .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+section.preguntas .content h1 {
+  font-size: 30px;
+  color: var(--primary);
+  font-family: gotham-black;
+  text-align: left;
+}
+section.preguntas .content ul {
+  list-style-type: none;
+  padding-left: 0px;
+  width: 70%;
+}
+section.preguntas .content ul li {
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--bg-gray);
+}
+section.preguntas .content ul li p {
+  margin: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+section.preguntas .content ul li .question {
+  display: flex;
+  justify-content: space-between;
+}
+section.preguntas .content ul li .question span {
+  font-size: 22px;
+  color: var(--orange);
+  font-family: gotham-black;
+}
+section.preguntas .content ul li .content-text {
+  padding: 5px 15px;
+}
+section.preguntas .content .d-none {
+  display: none;
+}
 
 @media (max-width: 1399px) {
   section.header .bgred h1 {
@@ -585,6 +629,15 @@ section.ranking .posicion p {
   }
   section.ranking .posicion p {
     font-size: 18px;
+  }
+  section.preguntas .content h1 {
+    font-size: 26px;
+  }
+  section.preguntas .content ul {
+    width: 90%;
+  }
+  section.preguntas .content ul li .content-text {
+    padding: 5px 50px 5px 5px;
   }
 }
 @media (max-width: 600px) {

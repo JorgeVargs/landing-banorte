@@ -168,6 +168,23 @@
             }
         }
 
+        &.preguntas{
+            .content{
+                h1{
+                    font-size: 26px;
+                }
+                ul{
+                    width: 90%;
+
+                    li{
+                        .content-text{
+                            padding: 5px 50px 5px 5px;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 
