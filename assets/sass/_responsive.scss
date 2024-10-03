@@ -1,0 +1,344 @@
+@include for_breakpoint(1399){
+    section{
+        &.header{
+            .bgred{
+                h1{
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
+@include for_breakpoint(1199){
+    section{
+        &.header{
+            .bgred{
+                h1{
+                    font-size: 26px;
+                }
+            }
+        }
+
+        &.participacion{
+            .informacion{
+                .col{
+                    &:nth-child(1){
+                        padding-right: 6%;
+                    }
+                    &:nth-child(2){
+                        padding-left: 6%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for_breakpoint(991){
+    section{
+        &.header{
+            .col{
+                &:first-of-type{
+                    width: 60%;
+                }
+                &:nth-of-type(2){
+                    width: 40%;
+                }
+            }
+            .bgred{
+                h1{
+                    font-size: 23px;
+                }
+            }
+        }
+
+        &.cards-pasos{
+            .card{
+                width: 200px;
+                padding: 50px 20px 0px;
+                img{
+                    width: 80px;
+                    height: 80px;
+                }
+
+                p{
+                    font-size: 15px;
+                }
+            }
+        }
+
+        &.pasos{
+            .steps{
+                .step{
+                    p{
+                        font-size: 16px;
+                    }
+
+                    span{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        &.participacion{
+            .informacion{
+                flex-direction: column;
+                .col{
+                   width: 100%;
+
+                   padding-left: 0px !important;
+                   padding-right: 0px !important;
+
+                   &::after{
+                    display: none !important;
+                   }
+
+                   ul{
+                        margin: 20px auto;
+                        max-width: none;
+                        list-style-type: none;
+                        padding-left: 0px;
+                        li{
+                            text-align: center;
+                        }
+                   }
+                   h3{
+                    text-align: center;
+                   }
+                   .contenedor{
+                    margin: auto;
+                   }
+                }
+            }
+        }
+    }
+}
+
+@include for_breakpoint(767){
+    section{
+        &.header{
+            .col{
+                height: 300px;
+                overflow: hidden;
+            }
+            .bgred{
+                h1{
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &.cards-pasos{
+            margin-top: 20px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .card{
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &.ranking{
+            img{
+                max-width: 170px;
+            }
+
+            .contenedor{
+                max-width:450px;
+
+                table{
+                    thead{
+                        tr{
+                            th{
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .posicion{
+                width: 250px;
+                height: 40px;
+                p{
+                    font-size: 18px;
+                }
+            }
+        }
+
+    }
+}
+
+@include for_breakpoint(600){
+    nav{
+        padding: 10px;
+        ul{
+            justify-content: center;
+            .nav-item{
+                .nav-link{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    section{
+        &.header{
+            flex-direction:column-reverse;
+            .col{
+                width: 100% !important; 
+                height: 200px;
+            }
+
+            .bgred{
+                h1{
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &.pasos{
+            padding: 0px 3%;
+            .steps{
+                .step{
+                   a{
+                    width: 45px;
+                    height: 45px;
+
+                    img{
+                        width: 25px;
+                        height: 25px;
+                    }
+                   }
+                   
+                   p{
+                    font-size: 15px;
+                   }
+
+                   span{
+                    font-size: 12px;
+                   }
+                }
+            }
+            
+
+            .content-steps{
+                .card{
+                    max-width: 480px;
+
+                    .head{
+                        h2{
+                            font-size: 20px;
+                        }
+                    }
+
+                    ul{
+                        li{
+                            padding: 20px;
+                            .partido{
+                                max-width: 80%;
+                                p{
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.participacion{
+            .divider{
+                margin-top: 100px;
+            }
+        }
+    }
+}
+
+@include for_breakpoint(480){
+
+    section{
+        &.pasos{
+            .content-steps{
+                .card{
+                    .head{
+                        h2{
+                            font-size: 18px;
+                        }
+                    }
+
+                    ul{
+                        li{
+                            .partido{
+                                max-width: 80%;
+                                p,span{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.participacion{
+            .informacion{
+                .col{
+                   ul{
+                       li{
+                            font-size: 18px;
+                            margin-bottom: 30px;
+                            strong{
+                                font-size: 20px;
+                            }
+                       }
+                   }
+                   h3{
+                    font-size: 22px;
+                   }
+
+                   .contenedor{
+                    width: 320px;
+                   }
+                }
+            }
+        }
+
+        &.ranking{
+            img{
+                max-width: 140px;
+            }
+
+            .contenedor{
+                max-width:320px;
+
+                table{
+                    thead{
+                        tr{
+                            th{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    tbody{
+                        tr{
+                            td{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .posicion{
+                width: 200px;
+                height: 35px;
+                p{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

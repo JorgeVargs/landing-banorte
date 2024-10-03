@@ -12,11 +12,19 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "gotham-black";
+  src: url("../assets/fonts/GothamBlack.eot");
+  src: url("../assets/fonts/GothamBlack.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/GothamBlack.woff") format("woff"), url("../assets/fonts/GothamBlack.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --primary:#ea0028;
   --gray:#f1f1f1;
   --text-gray:#5b6670;
   --bg-gray:#e6e7e9;
+  --orange:#ff671bff;
 }
 
 body {
@@ -35,6 +43,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  margin: 0px;
 }
 nav ul .nav-item {
   margin: 0px 12px;
@@ -42,6 +51,7 @@ nav ul .nav-item {
 nav ul .nav-item .nav-link {
   text-decoration: none;
   color: var(--text-gray);
+  font-size: 14px;
 }
 nav ul .nav-item .nav-link:hover {
   color: var(--primary);
@@ -70,25 +80,27 @@ section.header .bgred {
 }
 section.header .bgred h1 {
   color: white;
+  font-size: 38px;
+  font-family: gotham-book;
 }
-section.pasos {
+section.cards-pasos {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: -60px;
 }
-section.pasos .card {
-  width: 300px;
-  padding: 50px 25px;
+section.cards-pasos .card {
+  width: 250px;
+  padding: 54px 25px 0px;
   background-color: var(--gray);
   position: relative;
 }
-section.pasos .card span {
+section.cards-pasos .card span {
   position: absolute;
   top: 30px;
-  left: 40px;
-  width: 35px;
-  height: 35px;
+  left: 46px;
+  width: 33px;
+  height: 33px;
   border: 2px solid var(--primary);
   border-radius: 50%;
   display: block;
@@ -97,21 +109,583 @@ section.pasos .card span {
   align-items: center;
   justify-content: center;
 }
-section.pasos .card:last-of-type {
+section.cards-pasos .card:last-of-type {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-section.pasos .card:nth-last-of-type(2) {
+section.cards-pasos .card:nth-last-of-type(2) {
   background-color: var(--bg-gray);
 }
-section.pasos .card:first-of-type {
+section.cards-pasos .card:first-of-type {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-section.pasos .card p {
+section.cards-pasos .card img {
+  margin: auto;
+  display: block;
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+section.cards-pasos .card p {
   text-align: center;
   color: var(--text-gray);
   font-family: gotham-bold;
+}
+section.pasos {
+  padding: 0px 6%;
+}
+section.pasos .steps {
+  max-width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+section.pasos .steps .step {
+  text-align: center;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+section.pasos .steps .step.active a {
+  background-color: var(--orange);
+}
+section.pasos .steps .step.active a img {
+  opacity: 1;
+}
+section.pasos .steps .step.active p {
+  color: black;
+}
+section.pasos .steps .step.active span {
+  color: #5b6670;
+}
+section.pasos .steps .step a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #f0f4f5;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  margin: auto;
+}
+section.pasos .steps .step a img {
+  width: 34px;
+  height: 34px;
+  opacity: 0.2;
+}
+section.pasos .steps .step p {
+  font-family: gotham-black;
+  text-transform: uppercase;
+  margin: 5px;
+  font-size: 20px;
+  color: #cececeff;
+}
+section.pasos .steps .step span {
+  color: #cececeff;
+  font-family: gotham-black;
+  text-align: center;
+}
+section.pasos .steps .step:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: calc(100% - 55px);
+  height: 1px;
+  background-color: var(--gray);
+  top: 25px;
+  left: calc(50% + 27.5px);
+  order: -1;
+}
+section.pasos .content-steps {
+  margin-top: 70px;
+}
+section.pasos .content-steps .card {
+  border: 2px solid var(--bg-gray);
+  max-width: 650px;
+  border-radius: 10px;
+  margin: auto;
+}
+section.pasos .content-steps .card .head {
+  border-bottom: 2px solid var(--bg-gray);
+}
+section.pasos .content-steps .card .head h2 {
+  color: var(--primary);
+  font-family: gotham-bold;
+  text-align: center;
+}
+section.pasos .content-steps .card ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+section.pasos .content-steps .card ul li {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+section.pasos .content-steps .card ul li:not(:last-child) {
+  border-bottom: 2px solid var(--bg-gray);
+}
+section.pasos .content-steps .card ul li .partido p {
+  font-family: gotham-black;
+  color: #a7a9ac;
+  margin: 0px;
+}
+section.pasos .content-steps .card ul li .partido span {
+  font-family: gotham-black;
+  color: #a7a9ac;
+}
+section.pasos .content-steps .card ul li .check {
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-gray);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.pasos .content-steps .card ul li .check span {
+  display: block;
+  width: 13px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+section.pasos .content-steps .card ul li.active {
+  background-color: var(--bg-gray);
+}
+section.pasos .content-steps .card ul li.active .partido p {
+  color: var(--text-gray);
+}
+section.pasos .content-steps .card ul li.active .partido span {
+  color: var(--primary);
+}
+section.pasos .content-steps .card ul li.active .check {
+  background-color: var(--orange);
+}
+section.pasos .content-steps .card ul li.active .check span {
+  background-image: url(../../assets/check.png);
+}
+section.participacion .divider {
+  margin-top: 150px;
+  position: relative;
+}
+section.participacion .divider::before {
+  content: "";
+  position: absolute;
+  width: 29%;
+  height: 2px;
+  background-color: var(--bg-gray);
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  left: 18%;
+}
+section.participacion .divider::after {
+  content: "";
+  position: absolute;
+  width: 29%;
+  height: 2px;
+  background-color: var(--bg-gray);
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 18%;
+}
+section.participacion .divider img {
+  display: block;
+  margin: auto;
+  max-width: 50px;
+  opacity: 0.2;
+}
+section.participacion .informacion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+section.participacion .informacion .col {
+  position: relative;
+  width: 50%;
+}
+section.participacion .informacion .col:nth-child(1) {
+  padding-right: 145px;
+}
+section.participacion .informacion .col:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  background-image: url(../assets/lines.png);
+  right: 0;
+  width: 2px;
+  height: 70%;
+  top: 0;
+  bottom: 0px;
+  margin: auto 0px;
+}
+section.participacion .informacion .col:nth-child(2) {
+  padding-left: 125px;
+}
+section.participacion .informacion .col ul {
+  margin-top: 70px;
+  width: 320px;
+  margin-left: auto;
+}
+section.participacion .informacion .col ul li {
+  color: var(--text-gray);
+  font-family: gotham-bold;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+section.participacion .informacion .col ul li::marker {
+  color: var(--primary);
+}
+section.participacion .informacion .col ul li strong {
+  color: var(--primary);
+  display: block;
+  font-size: 24px;
+  margin-top: 10px;
+}
+section.participacion .informacion .col h3 {
+  color: var(--text-gray);
+  font-family: gotham-bold;
+  font-size: 26px;
+}
+section.participacion .informacion .col .contenedor {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 360px;
+}
+section.participacion .informacion .col .contenedor .puntos {
+  width: 100%;
+  border-spacing: 0px;
+}
+section.participacion .informacion .col .contenedor .puntos thead {
+  background-color: var(--text-gray);
+}
+section.participacion .informacion .col .contenedor .puntos thead tr th {
+  color: white;
+  text-align: left;
+  font-size: 13px;
+  padding: 8px 20px;
+}
+section.participacion .informacion .col .contenedor .puntos tbody tr {
+  border-bottom: 2px solid var(--text-gray);
+}
+section.participacion .informacion .col .contenedor .puntos tbody tr td {
+  font-size: 16px;
+  padding: 5px 15px;
+  border-bottom: 1px solid var(--bg-gray);
+}
+section.participacion .informacion .col .contenedor .puntos tbody tr td:first-of-type {
+  width: 180px;
+}
+section.participacion .informacion .col .contenedor .puntos tbody tr td:nth-child(2) {
+  text-align: center;
+  background-color: #F2F2F2;
+}
+section.participacion .informacion .col .contenedor .puntos .foot {
+  padding: 0px;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table {
+  width: 100%;
+  border-spacing: 0px;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr.favorito {
+  color: white;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr.favorito td {
+  background-color: var(--orange);
+  border-bottom: 0px;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr.total {
+  color: white;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr.total td {
+  background-color: var(--primary);
+  border-bottom: 0px;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr.total td {
+  padding-bottom: 10px;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr td {
+  text-align: left;
+}
+section.participacion .informacion .col .contenedor .puntos .foot table tbody tr td:first-of-type {
+  width: 230px;
+}
+section.ranking {
+  background-color: #E2E4E6;
+  margin-top: 50px;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+section.ranking img {
+  max-width: 210px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: -40px;
+}
+section.ranking .contenedor {
+  max-width: 745px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+  margin: auto;
+}
+section.ranking .contenedor table {
+  width: 100%;
+  border-spacing: 0px;
+}
+section.ranking .contenedor table thead tr th {
+  padding-top: 60px;
+  padding-bottom: 5px;
+  font-family: gotham-black;
+  color: var(--text-gray);
+  font-size: 20px;
+}
+section.ranking .contenedor table tbody tr:nth-child(odd) td {
+  background-color: var(--bg-gray);
+  padding: 5px;
+}
+section.ranking .contenedor table tbody tr:last-of-type td {
+  padding-bottom: 40px;
+}
+section.ranking .contenedor table tbody tr td {
+  text-align: center;
+  font-family: gotham-bold;
+  color: var(--text-gray);
+}
+section.ranking .posicion {
+  width: 320px;
+  height: 45px;
+  background-color: #ffa400;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: -18px;
+}
+section.ranking .posicion p {
+  font-family: gotham-bold;
+  font-size: 22px;
+  color: white;
+  padding: 5px 20px;
+}
+
+@media (max-width: 1399px) {
+  section.header .bgred h1 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1199px) {
+  section.header .bgred h1 {
+    font-size: 26px;
+  }
+  section.participacion .informacion .col:nth-child(1) {
+    padding-right: 6%;
+  }
+  section.participacion .informacion .col:nth-child(2) {
+    padding-left: 6%;
+  }
+}
+@media (max-width: 991px) {
+  section.header .col:first-of-type {
+    width: 60%;
+  }
+  section.header .col:nth-of-type(2) {
+    width: 40%;
+  }
+  section.header .bgred h1 {
+    font-size: 23px;
+  }
+  section.cards-pasos .card {
+    width: 200px;
+    padding: 50px 20px 0px;
+  }
+  section.cards-pasos .card img {
+    width: 80px;
+    height: 80px;
+  }
+  section.cards-pasos .card p {
+    font-size: 15px;
+  }
+  section.pasos .steps .step p {
+    font-size: 16px;
+  }
+  section.pasos .steps .step span {
+    font-size: 16px;
+  }
+  section.participacion .informacion {
+    flex-direction: column;
+  }
+  section.participacion .informacion .col {
+    width: 100%;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  section.participacion .informacion .col::after {
+    display: none !important;
+  }
+  section.participacion .informacion .col ul {
+    margin: 20px auto;
+    max-width: none;
+    list-style-type: none;
+    padding-left: 0px;
+  }
+  section.participacion .informacion .col ul li {
+    text-align: center;
+  }
+  section.participacion .informacion .col h3 {
+    text-align: center;
+  }
+  section.participacion .informacion .col .contenedor {
+    margin: auto;
+  }
+}
+@media (max-width: 767px) {
+  section.header .col {
+    height: 300px;
+    overflow: hidden;
+  }
+  section.header .bgred h1 {
+    font-size: 20px;
+  }
+  section.cards-pasos {
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  section.cards-pasos .card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  section.ranking img {
+    max-width: 170px;
+  }
+  section.ranking .contenedor {
+    max-width: 450px;
+  }
+  section.ranking .contenedor table thead tr th {
+    font-size: 17px;
+  }
+  section.ranking .posicion {
+    width: 250px;
+    height: 40px;
+  }
+  section.ranking .posicion p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    padding: 10px;
+  }
+  nav ul {
+    justify-content: center;
+  }
+  nav ul .nav-item .nav-link {
+    font-size: 13px;
+  }
+
+  section.header {
+    flex-direction: column-reverse;
+  }
+  section.header .col {
+    width: 100% !important;
+    height: 200px;
+  }
+  section.header .bgred h1 {
+    font-size: 18px;
+  }
+  section.pasos {
+    padding: 0px 3%;
+  }
+  section.pasos .steps .step a {
+    width: 45px;
+    height: 45px;
+  }
+  section.pasos .steps .step a img {
+    width: 25px;
+    height: 25px;
+  }
+  section.pasos .steps .step p {
+    font-size: 15px;
+  }
+  section.pasos .steps .step span {
+    font-size: 12px;
+  }
+  section.pasos .content-steps .card {
+    max-width: 480px;
+  }
+  section.pasos .content-steps .card .head h2 {
+    font-size: 20px;
+  }
+  section.pasos .content-steps .card ul li {
+    padding: 20px;
+  }
+  section.pasos .content-steps .card ul li .partido {
+    max-width: 80%;
+  }
+  section.pasos .content-steps .card ul li .partido p {
+    font-size: 15px;
+  }
+  section.participacion .divider {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 480px) {
+  section.pasos .content-steps .card .head h2 {
+    font-size: 18px;
+  }
+  section.pasos .content-steps .card ul li .partido {
+    max-width: 80%;
+  }
+  section.pasos .content-steps .card ul li .partido p, section.pasos .content-steps .card ul li .partido span {
+    font-size: 14px;
+  }
+  section.participacion .informacion .col ul li {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  section.participacion .informacion .col ul li strong {
+    font-size: 20px;
+  }
+  section.participacion .informacion .col h3 {
+    font-size: 22px;
+  }
+  section.participacion .informacion .col .contenedor {
+    width: 320px;
+  }
+  section.ranking img {
+    max-width: 140px;
+  }
+  section.ranking .contenedor {
+    max-width: 320px;
+  }
+  section.ranking .contenedor table thead tr th {
+    font-size: 14px;
+  }
+  section.ranking .contenedor table tbody tr td {
+    font-size: 14px;
+  }
+  section.ranking .posicion {
+    width: 200px;
+    height: 35px;
+  }
+  section.ranking .posicion p {
+    font-size: 15px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
